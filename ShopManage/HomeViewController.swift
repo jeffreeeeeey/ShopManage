@@ -15,11 +15,12 @@ class HomeViewController: UITableViewController {
 
         // Do any additional setup after loading the view.
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storedUsers: [String] = defaults.objectForKey("users") as [String]
-        if let user = String?(storedUsers[0]) {
+        
+        if let storedUsers: [String] = defaults.objectForKey("users") as? [String] {
             println(user)
         } else {
-            
+            let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC") as LoginViewController
+            self.presentViewController(loginVC, animated: true, completion: nil)
         }
     }
 
@@ -31,12 +32,6 @@ class HomeViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
-        if (isLoggedIn != 1) {
-            //LoginViewController vc = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC")
-            let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC");
-        }
     }
     
 
