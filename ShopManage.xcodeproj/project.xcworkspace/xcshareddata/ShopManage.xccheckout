@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>54BEF700-A91A-4DE3-8005-8522076686A7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ShopManage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C0BA89B3883C1F54CDC68863F9F436D6DF1228BC</key>
+		<string>https://github.com/jeffreeeeeey/ShopManage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ShopManage.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C0BA89B3883C1F54CDC68863F9F436D6DF1228BC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jeffreeeeeey/ShopManage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C0BA89B3883C1F54CDC68863F9F436D6DF1228BC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C0BA89B3883C1F54CDC68863F9F436D6DF1228BC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShopManage</string>
+		</dict>
+	</array>
+</dict>
+</plist>
