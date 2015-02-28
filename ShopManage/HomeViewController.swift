@@ -14,6 +14,13 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let storedUsers: [String] = defaults.objectForKey("users") as [String]
+        if let user = String?(storedUsers[0]) {
+            println(user)
+        } else {
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
