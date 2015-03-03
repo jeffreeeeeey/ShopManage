@@ -9,6 +9,7 @@
 //  http://llzg.com/llzgmri/m/p/
 
 import UIKit
+import Foundation
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
@@ -52,16 +53,25 @@ class LoginViewController: UIViewController {
         NSURLConnection.sendAsynchronousRequest(urlRequest, queue: queue, completionHandler: {
             (response: NSURLResponse!, data: NSData!, error: NSError!) in
             if data.length > 0 && error == nil {
-                let html = NSString(data: data, encoding: NSUTF8StringEncoding)
-                let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
-                println("html = \(html)")
+                //let html = NSString(data: data, encoding: NSUTF8StringEncoding)
+                let jsonObj: AnyObject! = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil)
+                if let jsonDic = jsonObj as? NSDictionary {
+                    println(jsonDic)
+                    
+                    if let isSuccess = jsonDic.valueForKey("isSuccess") as? String {
+                        println("-----login success: \(isSuccess)")
+                    }
+                }
+                
+                /*
+                let user: Dictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as NSDictionary
+                let keys = user.count
+                println("------key:\(keys)")
                 
                 var jsonError: NSError?
                 
-                
-
-                if NSJSONSerialization.isValidJSONObject(json!) {
-                    let jsonData = NSJSONSerialization.dataWithJSONObject(json!, options: NSJSONWritingOptions.PrettyPrinted, error: &jsonError)
+                if NSJSONSerialization.isValidJSONObject(jsonObj!) {
+                    let jsonData = NSJSONSerialization.dataWithJSONObject(jsonObj, options: NSJSONWritingOptions.PrettyPrinted, error: &jsonError)
                     
                     if let jdata = jsonData {
                         if jdata.length > 0 && jsonError == nil {
@@ -78,7 +88,7 @@ class LoginViewController: UIViewController {
                 }else {
                     println("not valid JSON Object")
                 }
-                
+                */
                 
                 
             } else if data.length == 0 && error == nil {
