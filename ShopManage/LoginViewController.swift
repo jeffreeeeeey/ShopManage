@@ -60,6 +60,20 @@ class LoginViewController: UIViewController {
                     
                     if let isSuccess = jsonDic.valueForKey("isSuccess") as? String {
                         println("-----login success: \(isSuccess)")
+                        if let userObj = jsonDic.valueForKey("user") as? NSDictionary {
+                            if let tag = userObj.valueForKey("tag") as? String {
+                                println("tag = \(tag)")
+                            }
+                            if let userID = userObj.valueForKey("userid") as? Int {
+                                println("user ID = \(userID)")
+                            }
+                            if let userName = userObj.valueForKey("name") as? String {
+                                println("Phone Number = \(userName)")
+                            }
+                            if let phoneNumber = userObj.valueForKey("phoneNum") as? String {
+                                println("Phone Number = \(phoneNumber)")
+                            }
+                        }
                     }
                 }
                 
